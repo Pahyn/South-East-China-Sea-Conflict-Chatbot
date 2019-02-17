@@ -13,10 +13,10 @@
         "location"
       ]
     },
-    "utter_ask_location": {
+    "utter_greet": {
       "slots": []
     },
-    "utter_greet": {
+    "utter_ask_location": {
       "slots": []
     }
   },
@@ -31,5 +31,5 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.keras_policy.KerasPolicy"
   ],
-  "trained_at": "20181202-111706"
+  "trained_at": "20190217-153010"
 }

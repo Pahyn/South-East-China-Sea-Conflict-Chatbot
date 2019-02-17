@@ -5,6 +5,7 @@ actions:
 - utter_greet
 - action_weather
 - utter_goodbye
+- action_mongo
 config:
   store_entities_as_slots: true
 entities:
