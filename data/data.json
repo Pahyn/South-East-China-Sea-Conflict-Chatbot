@@ -84,26 +84,6 @@
           "entities": []
         },
         {
-          "text": "How the mongo?",
-          "intent": "inform",
-          "entities": []
-        },
-        {
-          "text": "is mongo connected?",
-          "intent": "inform",
-          "entities": []
-        },
-        {
-          "text": "what is mongo db?",
-          "intent": "inform",
-          "entities": []
-        },
-        {
-          "text": "Tell me the content in mongo db?",
-          "intent": "inform",
-          "entities": []
-        },
-        {
           "text": "What's the weather in London today?",
           "intent": "inform",
           "entities": [
