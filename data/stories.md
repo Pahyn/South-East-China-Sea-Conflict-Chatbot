@@ -1,106 +1,143 @@
-## story 1
-* greet
-    - utter_greet
+## story_greet <!--- The name of the story. It is not mandatory, but useful for debugging. --> 
+* greet <!--- User input expressed as intent. In this case it represents users message 'Hello'. --> 
+ - utter_name <!--- The response of the chatbot expressed as an action. In this case it represents chatbot's response 'Hello, how can I help?' --> 
+ 
+## story_goodbye
+* goodbye
+ - utter_goodbye
+ 
+## story_name
+* name{"name":"Sam"}
+ - action_greet
 
-## story 2
+ ## story_general_information
+* general_information
+ - utter_general_information
+
+## story_9_dash_line
+* 9_dash_line
+ - utter_9_dash_line
+
+ ## story_eez
+* eez
+ - utter_eez
+ 
+## story_name
+* name
+ - action_greet
+ 
+## story_joke_02
+* greet
+    - utter_name
+ * name{"name": "Lucy"} <!--- User response with an entity. In this case it represents user message 'My name is Lucy.' --> 
+    - slot{"name": "lucy"}
+    - action_greet
+    - slot{"name": "Lucy"}
+* goodbye
+ - utter_goodbye
+ 
+## story_general_information_02
+* greet
+    - utter_name
+* name{"name": "joseph"}
+    - slot{"name": "joseph"}
+    - action_greet
+    - slot{"name": "Joseph"}
+* general_information
+    - utter_general_information
 * goodbye
     - utter_goodbye
 
-## story 3
-* inform
-    - utter_ask_location
 
-## Story 4
-* inform
-    - action_weather 
-
-## Generated Story -7174331076191393000
+## Generated Story -1915490559193332303
 * greet
-    - utter_greet
-* inform
-    - utter_ask_location
-* inform{"location": "london"}
-    - slot{"location": "london"}
-    - action_weather
-    - slot{"location": "london"}
+    - utter_name
+* name{"name": "john"}
+    - slot{"name": "john"}
+    - action_greet
+    - slot{"name": "John"}
+* general_information
+    - utter_general_information
+* eez
+    - utter_eez
+* goodbye
+    - utter_goodbye
+    
+## Generated Story -5894160409737502681
+* greet
+    - utter_name
+* name{"name": "johnny"}
+    - slot{"name": "johnny"}
+    - action_greet
+    - slot{"name": "Johnny"}
+* 9_dash_line
+    - utter_9_dash_line
 * goodbye
     - utter_goodbye
 
-## Generated Story -2666503392332450690
+## Generated Story -327902260335957343
 * greet
-    - utter_greet
-* inform{"location": "london"}
-    - slot{"location": "london"}
-    - action_weather
-    - slot{"location": "london"}
+    - utter_name
+* name{"name": "farhin"}
+    - slot{"name": "farhin"}
+    - action_greet
+    - slot{"name": "Farhin"}
+* general_information
+    - utter_general_information
+* eez
+    - utter_eez
+* 9_dash_line
+    - utter_9_dash_line
 * goodbye
     - utter_goodbye
 
-## Generated Story 9011687856451387285
+## Generated Story -8469899374942221535
 * greet
-    - utter_greet
-* inform{"location": "berlin"}
-    - slot{"location": "berlin"}
-    - action_weather
-    - slot{"location": "berlin"}
+    - utter_name
+* name{"name": "farhin"}
+    - slot{"name": "farhin"}
+    - action_greet
+    - slot{"name": "Farhin"}
+* general_information
+    - utter_general_information
 * goodbye
     - utter_goodbye
 
-## Generated Story 4867820171894292598
+## Generated Story -6268874800365627437
 * greet
-    - utter_greet
-* inform
-    - utter_ask_location
-* inform{"location": "malaysia"}
-    - slot{"location": "malaysia"}
-    - action_weather
-    - slot{"location": "malaysia"}
+    - utter_name
+* name{"name": "allie"}
+    - slot{"name": "allie"}
+    - action_greet
+    - slot{"name": "Allie"}
+* general_information
+    - utter_general_information
+* eez
+    - utter_eez
 * goodbye
     - utter_goodbye
 
-## Generated Story -2073744713509484745
+## Generated Story 7945190348167551724
 * greet
-    - utter_greet
-* inform
-    - utter_ask_location
-* inform{"location": "brazil"}
-    - slot{"location": "brazil"}
-    - action_weather
-    - slot{"location": "brazil"}
+    - utter_name
+* name{"name": "johnny"}
+    - slot{"name": "johnny"}
+    - action_greet
+    - slot{"name": "Johnny"}
+* 9_dash_line
+    - utter_9_dash_line
 * goodbye
     - utter_goodbye
 
-## Generated Story 9088638071973079917
+## Generated Story 1678978326310713640
 * greet
-    - utter_greet
-* inform
-    - utter_ask_location
-* inform{"location": "paris"}
-    - slot{"location": "paris"}
-    - action_weather
-    - slot{"location": "paris"}
-* goodbye
-    - utter_goodbye
-
-## Generated Story -60461219584686264
-* greet
-    - utter_greet
-* inform{"location": "jakarta"}
-    - slot{"location": "jakarta"}
-    - action_weather
-    - slot{"location": "jakarta"}
-* goodbye
-    - utter_goodbye
-
-## Generated Story 935083821313848707
-* greet
-    - utter_greet
-* inform
-    - utter_ask_location
-* inform{"location": "china"}
-    - slot{"location": "china"}
-    - action_weather
-    - slot{"location": "china"}
+    - utter_name
+* name{"name": "john"}
+    - slot{"name": "john"}
+    - action_greet
+    - slot{"name": "john"}
+* eez
+    - utter_eez
 * goodbye
     - utter_goodbye
 

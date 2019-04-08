@@ -8,36 +8,22 @@ actions:
 - utter_9_dash_line
 - utter_ask_location
 - utter_general_information
-config:
-  store_entities_as_slots: true
 entities:
 - name
 - location
-forms: []
 intents:
-- name:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- greet:
-    use_entities: true
-- eez:
-    use_entities: true
-- 9_dash_line:
-    use_entities: true
-- general_information:
-    use_entities: true
-- thanks:
-    use_entities: true
+- name
+- goodbye
+- greet
+- eez
+- 9_dash_line
+- general_information
+- thanks
 slots:
   location:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   name:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
 templates:
   buttons:
   - payload: '/in{"location": "china"}'

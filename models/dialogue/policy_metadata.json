@@ -2,34 +2,42 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "location"
+        "name"
+      ]
+    },
+    "action_greet": {
+      "slots": [
+        "name"
       ]
     },
     "utter_goodbye": {
       "slots": []
     },
-    "action_weather": {
-      "slots": [
-        "location"
-      ]
-    },
-    "utter_greet": {
+    "utter_eez": {
       "slots": []
     },
-    "utter_ask_location": {
+    "utter_general_information": {
+      "slots": []
+    },
+    "utter_9_dash_line": {
+      "slots": []
+    },
+    "utter_name": {
       "slots": []
     }
   },
-  "rasa_core": "0.13.0a1",
   "python": "3.6.7",
   "max_histories": [
-    5,
-    5
+    3,
+    3
   ],
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
-    "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
+    "rasa_core.policies.keras_policy.KerasPolicy",
+    "rasa_core.policies.memoization.MemoizationPolicy"
   ],
-  "trained_at": "20190217-153010"
+  "trained_at": "20190408-145445",
+  "rasa_core": "0.13.3",
+  "tensorflow": "1.12.0",
+  "sklearn": "0.20.3"
 }

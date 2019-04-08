@@ -1,64 +1,29 @@
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
+import logging
+import requests
+import json
+import random
 from rasa_core_sdk import Action
 from rasa_core_sdk.events import SlotSet
 
+logger = logging.getLogger(__name__)
 
-
-class ActionWeather(Action):
-
+class ActionGreet(Action):
     def name(self):
-        return 'action_weather'
+        # define the name of the action which can then be included in training stories
+        return "action_greet"
 
-    def run(
-        self,
-        dispatcher,
-        tracker,
-        domain,
-        ):
-        from apixu.client import ApixuClient
-        api_key = '3d60663e4540463fb2272623182811'  # your apixu key
-        client = ApixuClient(api_key)
-
-        loc = tracker.get_slot('location')
-        current = client.getCurrentWeather(q=loc)
-
-        city = current['location']['name']
-        condition = current['current']['condition']['text']
-        temperature_c = current['current']['temp_c']
-        humidity = current['current']['humidity']
-        wind_mph = current['current']['wind_mph']
-
-        response ="""It is currently {} in {} at the moment. The temperature is {} degrees, the humidity is {}% and the wind speed is {} mph. Powered by APIxu""".format(condition, city, temperature_c, humidity, wind_mph)
-
-        dispatcher.utter_message(response)
-        return [SlotSet('location', loc)]
-
-class MongoAction(Action):
-
-    def name(self):
-        return 'action_mongo'
-
-    def __init__(self):
-
-        from pymongo import MongoClient
-        client = MongoClient('mongodb://localhost:27017')
-    
-        db = client["SECSC"]
-        self.collection = db["conflict"]
-
-
-    def run(self,dispatcher,tracker,domain):
-        
-        loc = tracker.get_slot('location')
-        cursor = self.collection.find_one({"location": loc})
-
-        desc = cursor["description"]
-        claim = cursor["claim"]
-
-        response = """{} is {}""".format(desc,claim)
-
-        dispatcher.utter_message(response)
-        return [SlotSet('location', loc)]
+    def run(self, dispatcher, tracker, domain):
+        name = tracker.get_slot('name').capitalize()
+        seed = random.randint(0,1)
+        response1 = """ Welcome {} to SECSC Bot. I'am specialized in inform you about current situation in South East China Sea Conflict. You may used abbrevation 'SECSC' or 'secsc' in your question. Let's go!""".format(name)
+        response2 = """ Hi {}, my name is SECSC Bot. I'am trained to inform you about the situation in South East China Sea Conflict. You may used abbrevation 'SECSC' or 'secsc' in your question. Let's Start.""".format(name)   
+        response = [response1,response2]
+        dispatcher.utter_message(response[seed])
+        #return response[seed]
+        return [SlotSet("name", name)]

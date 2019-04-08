@@ -1,6 +1,15 @@
+Data train
+python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose
+
+Start action server (for custom action)
 python -m rasa_core_sdk.endpoint --actions actions
-python -m rasa_core.run -d models/dialogue -u models/nlu/default/weathernlu --endpoints endpoints.yml
+
+Start Interactive Training
+python -m rasa_core.train interactive -o models/dialogue -d domain.yml -c policies.yml -s data/stories.md --nlu models/current/nlu --endpoints endpoints.yml
+
+start API server
+python -m rasa_nlu.server --path ./models/deafult/nlu
+http://localhost:5000/parse?q=hello%20bot
 
 
-python -m rasa_core.train --online -o models/dialogue -d weather_domain.yml -s data/stories.md -u models/nlu/default/weathernlu --endpoints endpoints.yml --epochs 200
-
+python -m rasa_core.run --enable_api -d models/dialogue -u models/current/nlu -o out.log

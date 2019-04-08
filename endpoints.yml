@@ -1,7 +1,2 @@
-tracker_store:
-    store_type: mongod
-    url: mongodb://localhost:27017
-    db: SECSC
-    username: null
-    password: None
-    collection: conflict
+action_endpoint:
+  url: "http://localhost:5055/webhook"
