@@ -19,4 +19,3 @@ A chatbot developed using Rasa-nlu and MongoDB to give information about current
 
 # app:
 	Load app in web
->>>>>>> 6af9671b43f5ac0055ede7da71e563b59f277d6e
