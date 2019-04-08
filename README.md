@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# Rasa Stack starter-pack
 
 Looked through the [Rasa NLU](http://rasa.com/docs/nlu/) and [Rasa Core](http://rasa.com/docs/core/) documentation and ready to build your first intelligent assistant? We have some resources to help you get started! This repository contains the foundations of your first custom assistant. This starter-pack also comes with a step-by-step video tutorial which you can find [here](https://youtu.be/lQZ_x0LRUbI).  
@@ -93,3 +94,26 @@ This starter-pack lets you build a simple assistant which can tell Chuck Norris 
 
 
 Let us know how you are getting on with Rasa Stack and what have you built! Join the [Rasa Community Forum](https://forum.rasa.com) and share your experience with us!
+=======
+# South-East-China-Sea-Conflict-Chatbot
+A chatbot developed using Rasa-nlu and MongoDB to give information about current South East China Conflict  
+
+
+
+# To run bot install Make and run these codes in different terminal (Eg: make train-nlu)
+
+# train-nlu:
+	Trains a new nlu model using the projects Rasa NLU config
+  
+# train-core:
+	Trains a new dialogue model using the story training data
+
+# cmdline:
+	This will load the assistant in your terminal for you to chat.
+	
+# action-server:
+	Starts the server for custom action."
+
+# app:
+	Load app in web
+>>>>>>> 6af9671b43f5ac0055ede7da71e563b59f277d6e

@@ -4,10 +4,14 @@ actions:
 - utter_name
 - utter_eez
 - utter_goodbye
+<<<<<<< HEAD
 - action_greet
 - utter_9_dash_line
 - utter_ask_location
 - utter_general_information
+=======
+- action_mongo
+>>>>>>> 6af9671b43f5ac0055ede7da71e563b59f277d6e
 config:
   store_entities_as_slots: true
 entities:

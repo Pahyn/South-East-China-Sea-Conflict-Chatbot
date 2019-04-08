@@ -24,6 +24,13 @@
     "prev_action_greet",
     "prev_utter_9_dash_line",
     "prev_utter_ask_location",
+<<<<<<< HEAD
     "prev_utter_general_information"
+=======
+    "prev_utter_greet",
+    "prev_action_weather",
+    "prev_utter_goodbye",
+    "prev_action_mongo"
+>>>>>>> 6af9671b43f5ac0055ede7da71e563b59f277d6e
   ]
 }
