@@ -21,6 +21,23 @@ Message = function (arg) {
     return this;
 };
 
+var Image;
+Image = function (arg) {
+    this.text = arg.text, this.message_side = arg.message_side;
+    this.draw = function (_this) {
+        return function () {
+            var $message;
+            $message = $($('.message_template').clone().html());
+            $message.addClass(_this.message_side).find('.text').html(addBr("<img src='"+_this.text+"' width='100%' height='100%' >"));
+            $('.messages').append($message);
+            return setTimeout(function () {
+                return $message.addClass('appeared');
+            }, 0);
+        };
+    }(this);
+    return this;
+};
+
 
 function showBotMessage(msg){
         message = new Message({
@@ -30,6 +47,16 @@ function showBotMessage(msg){
         message.draw();
         $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
 }
+
+function showBotImage(msg){
+        message = new Image({
+            text: msg,
+            message_side: 'center'
+    });
+    message.draw();
+    $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
+}
+
 function showUserMessage(msg){
         $messages = $('.messages');
         message = new Message({
@@ -48,10 +75,19 @@ function sayToBot(text){
                 text:text,
             },
             function(jsondata, status){
+                console.log(jsondata)
                 if(jsondata["status"]=="success"){
-                    response=jsondata["response"];
-                    if(response){
+                    type=jsondata["type"];
+                    
+                    if(type=="single"){
+                        response=jsondata["response"]
                         showBotMessage(response);}
+                    
+                        if(type=="double"){
+                            response=jsondata["response"]
+                            image=jsondata["image"]
+                            showBotMessage(response);
+                            showBotImage(image);}
                 }
             });
 

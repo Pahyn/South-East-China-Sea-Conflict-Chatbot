@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask
 from flask import render_template,jsonify,request
 import requests
@@ -19,16 +18,17 @@ def chat():
         user_message = request.form["text"]
         response = requests.get("http://localhost:5005/conversations/default/respond",params={"q":user_message})
         response = response.json()  
-        print(response)
-        x = response[0]
 
-        if len(x)==2:
+        if len(response)==1:
+            x = response[0]
             text = x['text']
-            return jsonify({"status":"success","response":text})
+            return jsonify({"type":"single","status":"success","response":text})
         else:
+            x = response[0]
             text = x['text']
-            image = x['image']
-            return jsonify({"status":"success","response":text,"image":image})
+            y = response[1]
+            image = y['image']
+            return jsonify({"type":"double","status":"success","response":text,"image":image})
         #return 'OK'
     except Exception as e:
         print(e)
@@ -37,29 +37,3 @@ def chat():
 app.config["DEBUG"] = True
 if __name__ == "__main__":
     app.run(port=8080)
-=======
-from flask import Flask, render_template, request
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
-
-app = Flask(__name__)
-
-english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
-
-english_bot.set_trainer(ChatterBotCorpusTrainer)
-english_bot.train("chatterbot.corpus.english")
-
-
-@app.route("/")
-def home():
-    return render_template("home.html")
-
-@app.route("/get")
-def get_bot_response():
-    userText = request.args.get('msg')
-    return str(english_bot.get_response(userText))
-
-
-if __name__ == "__main__":
-    app.run()
->>>>>>> 6af9671b43f5ac0055ede7da71e563b59f277d6e
