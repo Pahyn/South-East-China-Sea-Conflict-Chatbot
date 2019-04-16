@@ -8,22 +8,36 @@ actions:
 - utter_9_dash_line
 - utter_ask_location
 - utter_general_information
+config:
+  store_entities_as_slots: true
 entities:
 - name
 - location
+forms: []
 intents:
-- name
-- goodbye
-- greet
-- eez
-- 9_dash_line
-- general_information
-- thanks
+- name:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- greet:
+    use_entities: true
+- eez:
+    use_entities: true
+- 9_dash_line:
+    use_entities: true
+- general_information:
+    use_entities: true
+- thanks:
+    use_entities: true
 slots:
   location:
-    type: text
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
   name:
-    type: text
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
 templates:
   buttons:
   - payload: '/in{"location": "china"}'
@@ -43,7 +57,7 @@ templates:
   utter_9_dash_line:
   - image: https://www.dw.com/image/18570509_303.gif
     text: Nine dash Line or 9-dash Line is little lines that shown up on official
-      Chinese maps since the 1940s .Tt demarcates a vast but vague stretch of ocean
+      Chinese maps since the 1940s .It demarcates a vast but vague stretch of ocean
       from China’s southern coast through most of the South China Sea. The area of
       the claim also violated the EEZ law which invoke anger im other country. Below
       is the area claim by China based on the Nine-Dash Line.

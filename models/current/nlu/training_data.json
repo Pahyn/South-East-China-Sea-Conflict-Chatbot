@@ -26,6 +26,10 @@
         "text": "what is 9 dash line?"
       },
       {
+        "intent": "9_dash_line",
+        "text": "what is 9 dash line?"
+      },
+      {
         "intent": "ask_location",
         "text": "What country involved in SECSC?"
       },
@@ -96,6 +100,10 @@
       {
         "intent": "eez",
         "text": "what is EEZ"
+      },
+      {
+        "intent": "eez",
+        "text": "what is EEZ?"
       },
       {
         "intent": "general_information",
@@ -222,6 +230,10 @@
         "text": "see you later"
       },
       {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
         "intent": "greet",
         "text": "Hi"
       },
@@ -284,6 +296,14 @@
       {
         "intent": "greet",
         "text": "Hello bot"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
       },
       {
         "intent": "name",
@@ -526,6 +546,30 @@
         "text": "my name is Allie"
       },
       {
+        "intent": "name",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "johnny",
+            "entity": "name"
+          }
+        ],
+        "text": "my name is Johnny"
+      },
+      {
+        "intent": "name",
+        "entities": [
+          {
+            "start": 8,
+            "end": 12,
+            "value": "john",
+            "entity": "name"
+          }
+        ],
+        "text": "call me john"
+      },
+      {
         "intent": "south_east_china_sea",
         "text": "What is South East China Sea?"
       },
@@ -609,6 +653,12 @@
         "value": "allie",
         "synonyms": [
           "Allie"
+        ]
+      },
+      {
+        "value": "johnny",
+        "synonyms": [
+          "Johnny"
         ]
       }
     ]
